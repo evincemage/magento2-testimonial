@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Evincemage_Testimonial::testimonial_content" title="Testimonial" sortOrder="10" >
+                        <resource id="Evincemage_Testimonial::post" title="Testimonial Posts" sortOrder="40">
+                            <resource id="Evincemage_Testimonial::save" title="Save Testimonial Post" sortOrder="10" />
+                            <resource id="Evincemage_Testimonial::post_delete" title="Delete Testimonial Post" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

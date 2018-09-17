@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Evincemage_Testimonial::testimonial" title="Evincemage Testimonial" module="Evincemage_Testimonial" sortOrder="50" resource="Evincemage_Testimonial::testimonial"/>
+        <add id="Evincemage_Testimonial::manage_items" title="All Testimonial" module="Evincemage_Testimonial" sortOrder="10" parent="Evincemage_Testimonial::testimonial" action="testimonial/testimonial/" resource="Evincemage_Testimonial::testimonial"/>
+        
+    </menu>
+</config>

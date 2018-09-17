@@ -1,0 +1,57 @@
+<?php
+$testimonial = $this->getTestimonial();
+?>
+<?php if ($testimonial->getSize() > 0) : ?>
+    <div class="testimonial-list-container">
+        <?php $i = 1; ?>
+        <?php foreach ($testimonial as $testimonials) : ?>
+            <?php
+            $default_avtar = $this->getViewFileUrl('Evincemage_Testimonial::images/Avatar.png');
+            $testimonial_img = $this->getUrl('pub/media/') . $testimonials->getImage();
+            ?>
+            <?php if ($i % 2 != 0) { ?>
+
+                <div class="testimonial-text odd">
+                    <div class="tesimony-image">
+                        <img src="<?php
+                        if ($testimonials->getImage() != ""): echo $testimonial_img;
+                        else: echo $default_avtar;
+                        endif;
+                        ?>">
+                    </div>
+                    <div class="description"><?php echo $testimonials->getContent(); ?></div>
+                    <div class="client_name_date"> 
+                        <h3 class="testimonial-post-item-title">
+                            <p class="author-name"><?php echo $testimonials->getTitle() ?></p>
+                        </h3>
+                        <?php $date = explode(" ", $testimonials["publish_date"]); ?>
+                        <div class="created_at"> <?php print_r($date[0]); ?></div>
+                    </div>
+                </div>
+            <?php } else { ?>
+
+                <div class="testimonial-text even">
+                    <div class=" description"><?php echo $testimonials->getContent(); ?></div>
+                    <div class="tesimony-image">
+                        <img src="<?php
+                        if ($testimonials->getImage() != ""): echo $testimonial_img;
+                        else: echo $default_avtar;
+                        endif;
+                        ?>">
+                    </div>
+                    <div class="client_name_date"> 
+                        <h3 class="testimonial-post-item-title">
+                            </p class="author-name"><?php echo $testimonials->getTitle() ?></p>
+                        </h3>
+                        <?php $date = explode(" ", $testimonials["publish_date"]); ?>
+                        <div class="created_at"> <?php print_r($date[0]); ?></div>
+                    </div>
+                </div>
+
+            <?php } $i++; ?>
+        <?php endforeach; ?>
+    </div>
+<?php else : ?>
+    <?php echo 'There are no testimonial at this moment'; ?>
+<?php endif; ?> 
+
